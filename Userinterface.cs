@@ -71,7 +71,6 @@ namespace Library_Console_App
 
         public static void EditExistingBookMenu()
         {
-            TitleBanner();
             Console.WriteLine("Choose an option to edit the book:");
             Console.WriteLine("1. Edit title");
             Console.WriteLine("2. Edit author");
@@ -83,7 +82,6 @@ namespace Library_Console_App
         }
         public static void EditExistingAuthorMenu()
         {
-            TitleBanner();
             Console.WriteLine("What would you like to edit?");
             Console.WriteLine("1. Edit Authors name");
             Console.WriteLine("2. Edit Country");

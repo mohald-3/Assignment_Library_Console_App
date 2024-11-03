@@ -27,13 +27,11 @@ namespace Library_Console_App
                     case 3: //Update existing book
                         Userinterface.ClearConsole(false);
                         library.EditExistingBook();
-                        Userinterface.ClearConsole(true);
                         break;
 
                     case 4: //Update existing author
                         Userinterface.ClearConsole(false);
                         library.EditExistingAuthor();
-                        Userinterface.ClearConsole(true);
                         break;
 
                     case 5: //Remove a book
