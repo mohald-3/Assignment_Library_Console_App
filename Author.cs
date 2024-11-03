@@ -7,9 +7,9 @@ namespace Library_Console_App
         public string Name { get; set; }
         public string Country { get; set; }
 
-        public Author(int id, string name, string country)
+        public Author(int authorid, string name, string country)
         {
-            AuthorID = id;
+            AuthorID = authorid;
             Name = name;
             Country = country;
         }

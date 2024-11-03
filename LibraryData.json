@@ -1,0 +1,53 @@
+{
+  "Books": [
+    {
+      "ISBN": 111111,
+      "Title": "Life",
+      "Author": "Eddie",
+      "Genre": "Self Development",
+      "PublishingYear": 1992,
+      "Rating": [ 1, 2, 3, 4 ]
+    },
+    {
+      "ISBN": 222222,
+      "Title": "Learn how to play",
+      "Author": "Noobzy",
+      "Genre": "Self Development",
+      "PublishingYear": 2022,
+      "Rating": [ 5, 4, 5, 5 ]
+    },
+    {
+      "ISBN": 333333,
+      "Title": "Cook the right way",
+      "Author": "Mohanad",
+      "Genre": "Cooking",
+      "PublishingYear": 2013,
+      "Rating": [ 1 ]
+    },
+    {
+      "ISBN": 444444,
+      "Title": "Express your feelings",
+      "Author": "Maja",
+      "Genre": "Self Development",
+      "PublishingYear": 2020,
+      "Rating": [ 5, 4, 5, 5, 5, 5, 5 ]
+    }
+  ],
+  "Authors": [
+    {
+      "AuthorID": 112233,
+      "Name": "Eddie",
+      "Country": "Sweden"
+    },
+    {
+      "AuthorID": 223344,
+      "Name": "Maja",
+      "Country": "Croatia"
+    },
+    {
+      "AuthorID": 334455,
+      "Name": "Noobzy",
+      "Country": "Sweden"
+    }
+  ]
+}

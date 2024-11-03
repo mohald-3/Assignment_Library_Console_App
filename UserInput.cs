@@ -50,5 +50,27 @@ namespace Library_Console_App
             }
             while (true);
         }
+
+        // Static method to get validated double input
+        public static double ValidateDoubleInput()
+        {
+            string? input;
+            double number;
+
+            do
+            {
+                input = Console.ReadLine();
+
+                if (double.TryParse(input, out number))
+                {
+                    return number;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid decimal number:");
+                }
+            }
+            while (true);
+        }
     }
 }

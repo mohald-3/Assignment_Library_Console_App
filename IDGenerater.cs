@@ -20,7 +20,7 @@ namespace Library_Console_App
         {
             int newID;
 
-            if(IsItABook is true)
+            if(IsItABook)
             {
                 do
                 {
