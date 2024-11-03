@@ -64,7 +64,7 @@ namespace Library_Console_App
             SeparatorLine();
             Console.WriteLine("1. Sort books by title");
             Console.WriteLine("2. Sort books by author");
-            Console.WriteLine("3. sort books by publishing year");
+            Console.WriteLine("3. Sort books by publishing year");
             Console.WriteLine("9. Go back to seach and filter menu");
 
         }

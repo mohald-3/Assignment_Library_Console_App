@@ -25,9 +25,6 @@ namespace Library_Console_App
             books = ImportedDB!.AllBooksFromDB;
             authors = ImportedDB.AllAuthorsFromDB;
 
-            // This is important to be able to create new author IDs or book ISBN without duplication
-            // Possible error may occur if there is already duplicated ISBN or Author IDs in the Json file.
-            // Might need to be handeld before doing this step
             books.ForEach(book => idgenerator.usedBookIDs.Add(book.BookID));
             authors.ForEach(author => idgenerator.usedAuthorIDs.Add(author.AuthorID));
         }
@@ -103,7 +100,7 @@ namespace Library_Console_App
                             bookToEdit.Title = newTitle;
                             Console.WriteLine(" -- Title updated successfully! -- ");
                             PrintSingleBookInfo(bookToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 2:
@@ -112,7 +109,7 @@ namespace Library_Console_App
                             string newAuthor = UserInput.ValidateTextInput();
                             bookToEdit.Author = newAuthor;
                             Console.WriteLine(" -- Author updated successfully! -- ");
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 3:
@@ -122,7 +119,7 @@ namespace Library_Console_App
                             bookToEdit.Genre = newGenre;
                             Console.WriteLine(" -- Genre updated successfully! -- ");
                             PrintSingleBookInfo(bookToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 4:
@@ -132,7 +129,7 @@ namespace Library_Console_App
                             bookToEdit.PublishingYear = newYear;
                             Console.WriteLine(" -- Genre updated successfully! -- ");
                             PrintSingleBookInfo(bookToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 5:
@@ -143,23 +140,24 @@ namespace Library_Console_App
                                 Console.WriteLine("Enter a rating for the book (1 to 5):");
                                 ratingInput = UserInput.ValidateNumberInput();
 
-                            } while (ratingInput > 0 && ratingInput < 6);
+                            } while (ratingInput < 1 || ratingInput > 5);
 
                             bookToEdit.Rating.Add(ratingInput);
                             Console.WriteLine($" -- Rating added successfully. New average rating: {bookToEdit.GetAverageRating():0.0}! -- ");
                             PrintSingleBookInfo(bookToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 9:
                             //9. Go back to main menu
                             Console.WriteLine(" -- Returning to the main menu. -- ");
                             continueEditing = false;
+                            Userinterface.ClearConsole(false);
                             break;
 
                         default:
                             Console.WriteLine("Invalid option, please select a valid choice");
-                            continueEditing = true;
+                            Userinterface.ClearConsole(true);
                             break;
                     }
                 } while (continueEditing);
@@ -198,7 +196,7 @@ namespace Library_Console_App
                             authorToEdit.Name = newName;
                             Console.WriteLine(" -- Author's name has been successfully updated! -- ");
                             PrintSingleAuthorInfo(authorToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 2:
@@ -208,18 +206,21 @@ namespace Library_Console_App
                             authorToEdit.Country = newCountry;
                             Console.WriteLine(" -- Author's country has been successfully updated! -- ");
                             PrintSingleAuthorInfo(authorToEdit);
-                            continueEditing = false;
+                            Userinterface.ClearConsole(true);
                             break;
 
                         case 9:
                             //9. Go back to main menu
                             Console.WriteLine(" -- Returning to the main menu. -- ");
                             continueEditing = false;
+                            Userinterface.ClearConsole(false);
                             break;
 
                         default:
                             Console.WriteLine(" -- Invalid selection. Please enter a valid option. -- ");
                             continueEditing = true;
+                            Userinterface.ClearConsole(true);
+
                             break;
                     }
                 } while (continueEditing);
@@ -269,13 +270,17 @@ namespace Library_Console_App
 
         public void ShowAllBooks()
         {
+            Userinterface.SeparatorLine();
             Console.WriteLine(" -- List of Available Books -- ");
+            Userinterface.SeparatorLine();
             PrintBooksInfo(books);
         }
 
         public void ShowAllAuthors()
         {
+            Userinterface.SeparatorLine();
             Console.WriteLine(" -- List of Available Authors -- ");
+            Userinterface.SeparatorLine();
             PrintAuthorsInfo(authors);
         }
 
@@ -348,8 +353,9 @@ namespace Library_Console_App
 
                     foreach (Book book in group)
                     {
-                        Console.WriteLine($"Titel: {book.Title}, Genre: {book.Genre}, Publishing year: {book.PublishingYear}, Average rating: {book.GetAverageRating()}");
+                        Console.WriteLine($"Titel: {book.Title}, Genre: {book.Genre}, Publishing year: {book.PublishingYear}, Average rating: {book.GetAverageRating():0.0}");
                     }
+                    Console.WriteLine("");
                 }
             }
             else
@@ -444,8 +450,6 @@ namespace Library_Console_App
             PrintBooksInfo(sortedBooks);
         }
 
-
-
         // Start Print helping functions 
         public void PrintBooksInfo(List<Book> listtoprint)
         {
@@ -461,7 +465,7 @@ namespace Library_Console_App
 
         public void PrintSingleBookInfo(Book book)
         {
-            Console.WriteLine($"- Titel: {book.Title}, Author: {book.Author}, Genre: {book.Genre}, Publishing year: {book.PublishingYear}, Average rating: {book.GetAverageRating()} -");
+            Console.WriteLine($"- Titel: {book.Title}, Author: {book.Author}, Genre: {book.Genre}, Publishing year: {book.PublishingYear}, Average rating: {book.GetAverageRating():0.0} -");
 
         }
 

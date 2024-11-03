@@ -25,11 +25,13 @@ namespace Library_Console_App
                         Userinterface.ClearConsole(true);
                         break;
                     case 3: //Update existing book
+                        Userinterface.ClearConsole(false);
                         library.EditExistingBook();
                         Userinterface.ClearConsole(true);
                         break;
 
                     case 4: //Update existing author
+                        Userinterface.ClearConsole(false);
                         library.EditExistingAuthor();
                         Userinterface.ClearConsole(true);
                         break;
@@ -45,6 +47,7 @@ namespace Library_Console_App
                         break;
 
                     case 7: //View all existing books and authers
+                        Userinterface.ClearConsole(false);
                         library.ShowAllBooks();
                         library.ShowAllAuthors();
                         Userinterface.ClearConsole(true);
