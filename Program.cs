@@ -57,6 +57,7 @@ namespace Library_Console_App
                         break;
 
                     case 9: //Exit and save changes
+                        library.SaveChanges();
                         Environment.Exit(0);
                         break;
 
