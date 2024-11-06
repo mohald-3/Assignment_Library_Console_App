@@ -29,8 +29,7 @@ namespace Library_Console_App
             authors.ForEach(author => idgenerator.usedAuthorIDs.Add(author.AuthorID));
         }
 
-        //Start Methods 
-         
+        // Start library methods 
         public void AddBook()
         {
             int bookid = idgenerator.GenerateUniqueID(true);
@@ -49,10 +48,10 @@ namespace Library_Console_App
 
             Console.WriteLine("Enter the publishing year of the book:");
             int publishingyear = UserInput.ValidateNumberInput();
-
-            books.Add(new Book(bookid, isbn, title, author, genre, publishingyear, []));
+            Book bookToAdd = new Book(bookid, isbn, title, author, genre, publishingyear, []);
+            books.Add(bookToAdd);
             Console.WriteLine($" -- Book added successfully! -- ");
-            Console.WriteLine($"- Title: {title}, Author: {author}, Genre: {genre}, Published: {publishingyear} -");
+            PrintSingleBookInfo(bookToAdd);
         }
 
         public void AddAuthor()
@@ -78,8 +77,7 @@ namespace Library_Console_App
 
             Console.WriteLine("Enter the title of the book you would like to edit:");
             string bookTitleInput = UserInput.ValidateTextInput();
-                    Console.WriteLine($" -- Book found! Here are the current details: -- ");
-
+            
             var bookToEdit = books.Find(book => string.Equals(book.Title, bookTitleInput, StringComparison.OrdinalIgnoreCase));
 
             if (bookToEdit != null)
@@ -132,14 +130,12 @@ namespace Library_Console_App
                             Userinterface.ClearConsole(true);
                             break;
 
-                        case 5:
-                            //5. Give a review
+                        case 5: //5. Give a review
                             int ratingInput;
                             do
                             {
                                 Console.WriteLine("Enter a rating for the book (1 to 5):");
                                 ratingInput = UserInput.ValidateNumberInput();
-
                             } while (ratingInput < 1 || ratingInput > 5);
 
                             bookToEdit.Rating.Add(ratingInput);
@@ -454,7 +450,9 @@ namespace Library_Console_App
             PrintBooksInfo(sortedBooks);
         }
 
-        // Start Print helping functions 
+        // End library methods
+
+        // Start Print helping methods 
         public void PrintBooksInfo(List<Book> listtoprint)
         {
             listtoprint.ForEach(book => Console.WriteLine
@@ -490,6 +488,7 @@ namespace Library_Console_App
         }
         // End Print helping functions
 
+        //Start JSON methods
         public void SaveChanges() // JSON file export 
         {
             ImportedDB updatedTemporaryDB = new ImportedDB
@@ -504,7 +503,5 @@ namespace Library_Console_App
             // Write the JSON string to the file
             File.WriteAllText(DataJSONfilePath, json);
         }
-
     }
-    // End Methods
 }
