@@ -1,12 +1,11 @@
-﻿
-
-namespace Library_Console_App
+﻿namespace Library_Console_App.Utility
 {
     public static class Userinterface
     {
 
         public static void TitleBanner()
         {
+            ClearConsole(false);
             Console.WriteLine("-------------- the Grand Oak Library --------------");
             Console.WriteLine(" Where Stories Come Alive and Knowledge Flourishes");
             SeparatorLine();
@@ -53,6 +52,8 @@ namespace Library_Console_App
             Console.WriteLine("1. Filter books by genre");
             Console.WriteLine("2. Filter books by author");
             Console.WriteLine("3. Filter books by publishing year");
+            Console.WriteLine("4. Filter Books By Title Contains");
+            Console.WriteLine("5. Filter Books By Publishing Year Range");
             Console.WriteLine("9. Go back to seach and filter menu");
 
         }

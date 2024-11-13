@@ -1,6 +1,7 @@
 {
   "Books": [
     {
+      "ID": 100001,
       "ISBN": 111111111,
       "Title": "Life Lessons",
       "Author": "Eddie",
@@ -9,6 +10,7 @@
       "Rating": [ 1, 2, 3, 4 ]
     },
     {
+      "ID": 100002,
       "ISBN": 222222222,
       "Title": "How to Play",
       "Author": "Saif",
@@ -17,6 +19,7 @@
       "Rating": [ 5, 4, 5, 5 ]
     },
     {
+      "ID": 100003,
       "ISBN": 333333333,
       "Title": "The Art of Cooking",
       "Author": "Mohanad",
@@ -25,6 +28,7 @@
       "Rating": [ 1 ]
     },
     {
+      "ID": 100004,
       "ISBN": 444444444,
       "Title": "Express Yourself",
       "Author": "Maja",
@@ -33,6 +37,7 @@
       "Rating": [ 5, 4, 5, 5, 5, 5, 5 ]
     },
     {
+      "ID": 100005,
       "ISBN": 555555555,
       "Title": "Journey to Health",
       "Author": "Eddie",
@@ -41,6 +46,7 @@
       "Rating": [ 4, 5, 5, 4 ]
     },
     {
+      "ID": 100006,
       "ISBN": 666666666,
       "Title": "Mastering the Art of Programming",
       "Author": "Saif",
@@ -49,6 +55,7 @@
       "Rating": [ 5, 5, 5, 5 ]
     },
     {
+      "ID": 100007,
       "ISBN": 777777777,
       "Title": "Culinary Adventures",
       "Author": "Mohanad",
@@ -57,6 +64,7 @@
       "Rating": [ 3, 4 ]
     },
     {
+      "ID": 100008,
       "ISBN": 888888888,
       "Title": "Creative Writing",
       "Author": "Maja",
@@ -65,6 +73,7 @@
       "Rating": [ 2, 3, 5 ]
     },
     {
+      "ID": 100009,
       "ISBN": 999999999,
       "Title": "Mindfulness for Beginners",
       "Author": "Anna",
@@ -73,6 +82,7 @@
       "Rating": [ 5, 5, 5, 4 ]
     },
     {
+      "ID": 100010,
       "ISBN": 101010101,
       "Title": "The Secrets of Baking",
       "Author": "Liam",
@@ -81,6 +91,7 @@
       "Rating": [ 1, 2 ]
     },
     {
+      "ID": 100011,
       "ISBN": 202020202,
       "Title": "Adventures in Programming",
       "Author": "Saif",
@@ -89,6 +100,7 @@
       "Rating": [ 5, 5, 4 ]
     },
     {
+      "ID": 100012,
       "ISBN": 303030303,
       "Title": "Healthy Living",
       "Author": "Anna",
@@ -97,6 +109,7 @@
       "Rating": [ 4, 5, 5, 4 ]
     },
     {
+      "ID": 100013,
       "ISBN": 404040404,
       "Title": "The Future of Cooking",
       "Author": "Mohanad",
@@ -105,6 +118,7 @@
       "Rating": [ 5, 5, 5 ]
     },
     {
+      "ID": 100014,
       "ISBN": 505050505,
       "Title": "Writing for Success",
       "Author": "Maja",
@@ -113,6 +127,7 @@
       "Rating": [ 2, 4, 5 ]
     },
     {
+      "ID": 100015,
       "ISBN": 606060606,
       "Title": "Understanding Psychology",
       "Author": "Liam",
@@ -121,6 +136,7 @@
       "Rating": [ 4, 3 ]
     },
     {
+      "ID": 100016,
       "ISBN": 707070707,
       "Title": "Emotional Intelligence",
       "Author": "Anna",
@@ -131,37 +147,37 @@
   ],
   "Authors": [
     {
-      "AuthorID": 112233,
+      "ID": 112233,
       "Name": "Eddie",
       "Country": "Sweden"
     },
     {
-      "AuthorID": 223344,
+      "ID": 223344,
       "Name": "Maja",
       "Country": "Croatia"
     },
     {
-      "AuthorID": 334455,
+      "ID": 334455,
       "Name": "Saif",
       "Country": "Sweden"
     },
     {
-      "AuthorID": 445566,
+      "ID": 445566,
       "Name": "Mohanad",
       "Country": "Egypt"
     },
     {
-      "AuthorID": 556677,
+      "ID": 556677,
       "Name": "Anna",
       "Country": "Norway"
     },
     {
-      "AuthorID": 667788,
+      "ID": 667788,
       "Name": "Liam",
       "Country": "Denmark"
     },
     {
-      "AuthorID": 778899,
+      "ID": 778899,
       "Name": "Isabella",
       "Country": "Finland"
     }

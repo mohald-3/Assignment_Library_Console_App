@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using Library_Console_App.LibrarySystem.Models;
 
-namespace Library_Console_App
+namespace Library_Console_App.LibrarySystem
 {
     public class ImportedDB
     {

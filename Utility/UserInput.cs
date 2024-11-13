@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Library_Console_App.LibrarySystem.Models;
+using System;
+using System.Numerics;
 using System.Text.RegularExpressions;
 
-namespace Library_Console_App
+namespace Library_Console_App.Utility
 {
     public static class UserInput
     {
@@ -71,6 +73,23 @@ namespace Library_Console_App
                 }
             }
             while (true);
+        }
+
+        public static int ValidateRateInput()
+        {
+            int ratingInput;
+            do
+            {
+                ratingInput = UserInput.ValidateNumberInput();
+
+                if (ratingInput < 1 || ratingInput > 5)
+                {
+                    Console.WriteLine("Invalid input, rating should be between 1 and 5");
+                }
+
+            } while (ratingInput < 1 || ratingInput > 5);
+
+            return ratingInput;
         }
     }
 }

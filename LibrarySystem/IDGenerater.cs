@@ -1,5 +1,4 @@
-﻿
-namespace Library_Console_App
+﻿namespace Library_Console_App.LibrarySystem
 {
     public class IDGenerator
     {
@@ -20,7 +19,7 @@ namespace Library_Console_App
         {
             int newID;
 
-            if(IsItABook)
+            if (IsItABook)
             {
                 do
                 {
