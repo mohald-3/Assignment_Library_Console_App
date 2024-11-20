@@ -82,20 +82,12 @@ namespace Library_Console_App.LibrarySystem
             }
         }
 
-        public void ShowAllBooks()
+        public void ShowAll<T>(List<T> ListToPrint)
         {
             Userinterface.SeparatorLine();
-            Console.WriteLine(" -- List of Available Books -- ");
+            Console.WriteLine($" -- List of Available {typeof(T).Name}s -- ");
             Userinterface.SeparatorLine();
             PrintInfo(books);
-        }
-
-        public void ShowAllAuthors()
-        {
-            Userinterface.SeparatorLine();
-            Console.WriteLine(" -- List of Available Authors -- ");
-            Userinterface.SeparatorLine();
-            PrintInfo(authors);
         }
 
         public void SeachBookByTitle()

@@ -3,6 +3,7 @@ using Library_Console_App.Utility;
 using Library_Console_App.LibrarySystem;
 using static System.Reflection.Metadata.BlobBuilder;
 using Library_Console_App.LibrarySystem.Models;
+using System.Collections.Generic;
 
 namespace Library_Console_App 
 {
@@ -48,8 +49,8 @@ namespace Library_Console_App
 
                     case 7: //View all existing books and authers
                         //Userinterface.ClearConsole(false);
-                        library.ShowAllBooks();
-                        library.ShowAllAuthors();
+                        library.ShowAll(library.books);
+                        library.ShowAll(library.authors);
                         Console.ReadKey();
                         break;
 
@@ -77,7 +78,7 @@ namespace Library_Console_App
         private static void EditExistingBook(Library library)
         {
             Userinterface.TitleBanner();
-            library.ShowAllBooks();
+            library.ShowAll(library.books);
             Userinterface.SeparatorLine();
 
             Console.WriteLine("Enter the title of the book you would like to edit:");
@@ -94,8 +95,9 @@ namespace Library_Console_App
                 do
                 {
                     Userinterface.TitleBanner();
-                    Console.WriteLine($"-- You currently editing the book {bookToEdit.Title} -- ");
+                    Console.WriteLine($"-- You currently editing the book \"{bookToEdit.Title}\" -- ");
                     Console.WriteLine(bookToEdit.GetInfo());
+                    Console.WriteLine("");
                     Userinterface.EditExistingBookMenu();
 
                     int userChoice = UserInput.ValidateNumberInput();
@@ -150,22 +152,25 @@ namespace Library_Console_App
         private static void EditExistingAuthor(Library library)
         {
             Userinterface.TitleBanner();
-            library.ShowAllAuthors();
+            library.ShowAll(library.authors);
+            Userinterface.SeparatorLine();
+
             Console.WriteLine("Enter the author you would like to edit");
             string authorNameInput = UserInput.ValidateTextInput();
-
             var authorToEdit = library.authors.Find(author => string.Equals(author.Name, authorNameInput, StringComparison.OrdinalIgnoreCase));
 
             if (authorToEdit != null)
             {
-                Console.WriteLine($" -- Author found! -- ");
+                Console.WriteLine($" -- Author found! Here are the current details: -- ");
                 Console.WriteLine(authorToEdit.GetInfo());
-
                 bool continueEditing = true;
+
                 do
                 {
                     Userinterface.TitleBanner();
+                    Console.WriteLine($"-- You currently editing the book \"{authorToEdit.Name}\" -- ");
                     Console.WriteLine(authorToEdit.GetInfo());
+                    Console.WriteLine("");
                     Userinterface.EditExistingAuthorMenu();
                     int userChoice = UserInput.ValidateNumberInput();
 
